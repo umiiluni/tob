@@ -490,8 +490,10 @@
     </div>
 
     <script>
-        // Función para cambiar entre secciones
+        // Función para cambiar entre secciones - VERSIÓN CORREGIDA
         function cambiarSeccion(seccionId) {
+            console.log('Cambiando a:', seccionId);
+            
             // Ocultar todas las secciones
             const secciones = document.querySelectorAll('.section');
             secciones.forEach(seccion => {
@@ -503,15 +505,23 @@
             if (seccionDestino) {
                 seccionDestino.classList.add('active');
                 
-                // Aplicar animación a los elementos de la nueva sección
-                setTimeout(() => {
-                    const elementos = seccionDestino.querySelectorAll('.animate-in');
-                    elementos.forEach(elemento => {
-                        elemento.style.animation = 'none';
-                        setTimeout(() => {
-                            elemento.style.animation = 'slideUp 0.6s ease-out';
-                        }, 10);
-                    });
-                }, 50);
+                // Scroll al inicio
+                window.scrollTo(0, 0);
             }
         }
+
+        // Contador de días - fijo en 7 días
+        function actualizarContador() {
+            const contador = document.getElementById('contador');
+            if (contador) {
+                contador.innerHTML = `Hace <strong>7 días</strong> que nos conocimos`;
+            }
+        }
+
+        // Inicializar cuando cargue la página
+        document.addEventListener('DOMContentLoaded', function() {
+            actualizarContador();
+        });
+    </script>
+</body>
+</html>
