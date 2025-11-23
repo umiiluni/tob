@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.section {
+    display: none;
+    min-height: 100vh;
+    padding: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.section.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Portada */
+.portada-content {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.titulo-principal {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.separador {
+    width: 100px;
+    height: 3px;
+    background: white;
+    margin: 2rem auto;
+    opacity: 0.7;
+}
+
+/* Botones */
+.btn-empezar, .btn-siguiente {
+    background: #D2691E;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.btn-empezar:hover, .btn-siguiente:hover {
+    background: #8B4513;
+    transform: translateY(-2px);
+}
+
+/* Cards de contenido */
+.content-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 600px;
+    width: 90%;
+}
+
+.header-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.numero-seccion {
+    background: #8B4513;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.content-card h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin: 0;
+}
+
+/* Burbujas de chat */
+.chat-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.burbuja {
+    margin: 1rem 0;
+    max-width: 80%;
+    text-align: left;
+}
+
+.burbuja-izq {
+    align-self: flex-start;
+}
+
+.burbuja-der {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.burbuja-izq, .burbuja-der {
+    background: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-radius: 18px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.burbuja-destino {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    padding: 1.2rem 1.8rem;
+    border-radius: 18px;
+    margin: 1.5rem auto;
+    max-width: 90%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.burbuja-aceptacion {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    padding: 1rem 1.5rem;
+    border-radius: 18px;
+    margin: 1rem auto;
+    max-width: 60%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Fotos */
+.captura-chat {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.marco-foto {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border: 2px solid #8B4513;
+}
+
+.img-captura {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pie-foto {
+    margin-top: 0.8rem;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Texto de historia */
+.historia-texto {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+}
+
+.historia-texto p {
+    margin: 0.8rem 0;
+}
+
+/* Mensaje final */
+.mensaje-final {
+    background: linear-gradient(135deg, #fffaf0, #fdf5e6);
+}
+
+.carta {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+.firma {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #8B4513;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+.contador {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 1.2rem;
+    background: #8B4513;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2.8rem;
+    }
+    
+    .content-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .content-card h2 {
+        font-size: 2rem;
+    }
+    
+    .burbuja {
+        max-width: 95%;
+    }
+    
+    .carta {
+        font-size: 1rem;
+    }
+}

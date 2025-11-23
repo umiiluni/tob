@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lokuras</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Portada -->
+        <section id="portada" class="section active">
+            <div class="portada-content">
+                <h1 class="titulo-principal">que fue lo que paso?</h1>
+                <p class="subtitulo">"Todo arrancó cuando..."</p>
+                <div class="separador"></div>
+                <button class="btn-empezar" onclick="cambiarSeccion('destino')">
+                    como te conoci tobikiss
+                </button>
+            </div>
+        </section>
+
+        <!-- El Destino Actúa -->
+        <section id="destino" class="section">
+            <div class="content-card">
+                <div class="header-seccion">
+                    <div class="numero-seccion">1</div>
+                    <h2>Cuando el destino se metió</h2>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="burbuja burbuja-izq">
+                        "Seguro no tenés boca por eso te tapás con el celu"
+                    </div>
+                    
+                    <div class="burbuja burbuja-der">
+                        "Jajajajaja es porque ahí está en el medio pero... mira, también puedo bebotear como un mogólico"
+                    </div>
+                    
+                    <!-- Imagen de la primera conversación -->
+                    <div class="captura-chat">
+                        <div class="marco-foto">
+                            <img src="https://i.ibb.co/3YM1K323/IMG-1695.jpg" alt="Nuestra primera conversación" class="img-captura">
+                        </div>
+                        <p class="pie-foto">Y así arrancó todo...</p>
+                    </div>
+                    
+                    <div class="burbuja burbuja-izq">
+                        "¿De dónde sos?"
+                    </div>
+                    <div class="burbuja burbuja-der">
+                        "De Córdoba, Capilla del Monte"
+                    </div>
+                    <div class="burbuja-destino">
+                        "Justo estoy viajando para allá"
+                    </div>
+                </div>
+                
+                <button class="btn-siguiente" onclick="cambiarSeccion('invitacion')">
+                    Seguir leyendo
+                </button>
+            </div>
+        </section>
+
+        <!-- La Invitación -->
+        <section id="invitacion" class="section">
+            <div class="content-card">
+                <div class="header-seccion">
+                    <div class="numero-seccion">2</div>
+                    <h2>La birra que cambió todo</h2>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="burbuja burbuja-der">
+                        "# tomemos una birra"
+                    </div>
+                    
+                    <!-- Imagen de la invitación -->
+                    <div class="captura-chat">
+                        <div class="marco-foto">
+                            <img src="https://i.ibb.co/FC9ctnX/IMG-1694.jpg" alt="Invitación a tomar una birra" class="img-captura">
+                        </div>
+                        <p class="pie-foto">La propuesta mas random que me hizo conocerte</p>
+                    </div>
+                    
+                    <div class="burbuja-aceptacion">
+                        "Acepto"
+                    </div>
+                </div>
+                
+                <button class="btn-siguiente" onclick="cambiarSeccion('encuentro')">
+                    Lo que pasó después
+                </button>
+            </div>
+        </section>
+
+        <!-- El Encuentro -->
+        <section id="encuentro" class="section">
+            <div class="content-card">
+                <div class="header-seccion">
+                    <div class="numero-seccion">3</div>
+                    <h2>El encuentro</h2>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="burbuja burbuja-der">
+                        "Ya te vi, boludo. Vení"
+                    </div>
+                    
+                    <!-- Imagen del encuentro -->
+                    <div class="captura-chat">
+                        <div class="marco-foto">
+                            <img src="https://i.ibb.co/rX9FbcY/IMG-1690.jpg" alt="Ya te vi" class="img-captura">
+                        </div>
+                        <p class="pie-foto">El momento de la verdad</p>
+                    </div>
+                    
+                    <div class="burbuja burbuja-izq">
+                        "En menos de 10 estoy, estoy todo de negro"
+                    </div>
+                    
+                    <!-- Imagen de la ubicación -->
+                    <div class="captura-chat">
+                        <div class="marco-foto">
+                            <img src="https://i.ibb.co/5X1S3ZGp/IMG-1689.jpg" alt="Ubicación en Capilla" class="img-captura">
+                        </div>
+                        <p class="pie-foto">Ahí en la plaza, todo empezó</p>
+                    </div>
+                </div>
+                
+                <div class="historia-texto">
+                    <p>Y así fue... esa primera birra que se transformó en risas que no paraban,</p>
+                    <p>esa conexión al toque que se siente pocas veces,</p>
+                    <p>y ese beso que salió tan natural...</p>
+                </div>
+                
+                <button class="btn-siguiente" onclick="cambiarSeccion('tios')">
+                    Y siguió...
+                </button>
+            </div>
+        </section>
+
+        <!-- Casa de los Tíos -->
+        <section id="tios" class="section">
+            <div class="content-card">
+                <div class="header-seccion">
+                    <div class="numero-seccion">4</div>
+                    <h2>La noche en lo de tus tíos</h2>
+                </div>
+                
+                <div class="historia-texto">
+                    <p>"Te invito a casa de mis tíos..."</p>
+                    <p>Y ahí caímos, cocinaste cosas ricas,</p>
+                    <p>tus tíos que me recibieron con la mejor,</p>
+                    <p>esa onda que se sintió desde el primer momento,</p>
+                    <p>y la re certeza de que esto era diferente.</p>
+                </div>
+                
+                <button class="btn-siguiente" onclick="cambiarSeccion('mensaje')">
+                    Mi mensaje para vos
+                </button>
+            </div>
+        </section>
+
+        <!-- Mensaje Final -->
+        <section id="mensaje" class="section">
+            <div class="content-card mensaje-final">
+                <div class="header-seccion">
+                    <h2>Para vos</h2>
+                </div>
+                
+                <div class="carta">
+                    <p>bueno tobi,</p>
+                    <p>Aunque ahora la distancia nos separe por un tiempo,</p>
+                    <p>estos días con vos fueron muy hermosos.</p>
+                    <p>Desde esa primera birra hasta las risas con tus tíos,</p>
+                    <p>cada momento me quedó grabado.</p>
+                    <br>
+                    <p class="firma">Esto recién empieza, ¿no?</p>
+                    <div class="contador" id="contador"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
