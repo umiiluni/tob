@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lokuras</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Lo nuestro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,126 +13,134 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
-            color: #333;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0fa3b1 0%, #1e6f7a 100%);
+            color: #2d3748;
+            line-height: 1.6;
             min-height: 100vh;
         }
 
         .container {
             width: 100%;
             min-height: 100vh;
+            padding: 1rem;
         }
 
         .section {
             display: none;
             min-height: 100vh;
-            padding: 2rem;
             width: 100%;
+            animation: fadeIn 0.5s ease-in;
         }
 
         .section.active {
-            display: flex !important;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
         }
 
         /* Portada */
         .portada-content {
+            text-align: center;
             color: white;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            padding: 2rem 1rem;
+            max-width: 400px;
         }
 
         .titulo-principal {
-            font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .subtitulo {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            font-style: italic;
             opacity: 0.9;
+            font-weight: 400;
         }
 
         .separador {
-            width: 100px;
+            width: 60px;
             height: 3px;
             background: white;
-            margin: 2rem auto;
+            margin: 0 auto 2rem;
             opacity: 0.7;
         }
 
         /* Botones */
         .btn-empezar, .btn-siguiente {
-            background: #D2691E;
+            background: #2a9d8f;
             color: white;
             border: none;
             padding: 1rem 2rem;
             font-size: 1.1rem;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 2rem;
             font-weight: 600;
+            box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3);
+            width: 100%;
+            max-width: 280px;
         }
 
         .btn-empezar:hover, .btn-siguiente:hover {
-            background: #8B4513;
+            background: #23857a;
             transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(42, 157, 143, 0.4);
         }
 
         /* Cards de contenido */
         .content-card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-width: 600px;
-            width: 90%;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 1rem;
         }
 
         .header-seccion {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
         }
 
         .numero-seccion {
-            background: #8B4513;
+            background: #2a9d8f;
             color: white;
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .content-card h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: #8B4513;
+            font-size: 1.5rem;
+            color: #1a202c;
             margin: 0;
+            font-weight: 600;
         }
 
         /* Burbujas de chat */
         .chat-container {
             width: 100%;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .burbuja {
             margin: 1rem 0;
-            max-width: 80%;
+            max-width: 85%;
             text-align: left;
         }
 
@@ -147,46 +154,48 @@
         }
 
         .burbuja-izq, .burbuja-der {
-            background: #f8f9fa;
-            padding: 1rem 1.5rem;
+            background: #f7fafc;
+            padding: 0.8rem 1.2rem;
             border-radius: 18px;
-            border: 1px solid #e9ecef;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
         .burbuja-destino {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            padding: 1.2rem 1.8rem;
+            background: #e6fffa;
+            border: 2px solid #2a9d8f;
+            padding: 1rem 1.5rem;
             border-radius: 18px;
             margin: 1.5rem auto;
             max-width: 90%;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
+            color: #234e52;
         }
 
         .burbuja-aceptacion {
-            background: #d4edda;
-            border: 2px solid #28a745;
-            padding: 1rem 1.5rem;
+            background: #c6f6d5;
+            border: 2px solid #38a169;
+            padding: 0.8rem 1.5rem;
             border-radius: 18px;
             margin: 1rem auto;
-            max-width: 60%;
+            max-width: 70%;
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
+            color: #22543d;
         }
 
         /* Fotos */
         .captura-chat {
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             text-align: center;
         }
 
         .marco-foto {
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            border: 2px solid #8B4513;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            border: 2px solid #2a9d8f;
         }
 
         .img-captura {
@@ -196,17 +205,18 @@
         }
 
         .pie-foto {
-            margin-top: 0.8rem;
-            font-style: italic;
-            color: #666;
+            margin-top: 0.5rem;
+            color: #4a5568;
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* Texto de historia */
         .historia-texto {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.6;
             margin: 1.5rem 0;
+            color: #4a5568;
         }
 
         .historia-texto p {
@@ -215,32 +225,32 @@
 
         /* Mensaje final */
         .mensaje-final {
-            background: linear-gradient(135deg, #fffaf0, #fdf5e6);
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
         }
 
         .carta {
             text-align: left;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.7;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
+            color: #4a5568;
         }
 
         .firma {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             text-align: center;
-            color: #8B4513;
+            color: #2a9d8f;
             margin-top: 1.5rem;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .contador {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 2rem;
-            padding: 1.2rem;
-            background: #8B4513;
+            padding: 1rem;
+            background: #2a9d8f;
             color: white;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
             font-weight: 600;
         }
@@ -251,26 +261,52 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Mejoras para móviles */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+            
+            .portada-content {
+                padding: 1rem;
+            }
+            
             .titulo-principal {
-                font-size: 2.8rem;
-            }
-            
-            .content-card {
-                padding: 1.5rem 1rem;
-            }
-            
-            .content-card h2 {
                 font-size: 2rem;
             }
             
-            .burbuja {
-                max-width: 95%;
+            .content-card {
+                padding: 1.5rem;
+                margin: 0.5rem;
             }
             
-            .carta {
+            .content-card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .burbuja {
+                max-width: 90%;
+            }
+            
+            .btn-empezar, .btn-siguiente {
+                padding: 0.9rem 1.5rem;
                 font-size: 1rem;
+            }
+        }
+
+        /* Efectos de entrada para elementos */
+        .animate-in {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -279,19 +315,19 @@
     <div class="container">
         <!-- Portada -->
         <section id="portada" class="section active">
-            <div class="portada-content">
+            <div class="portada-content animate-in">
                 <h1 class="titulo-principal">que fue lo que paso?</h1>
-                <p class="subtitulo">"Todo arrancó cuando..."</p>
+                <p class="subtitulo">no se que paso, tuvimos suerte  </p>
                 <div class="separador"></div>
                 <button class="btn-empezar" onclick="cambiarSeccion('destino')">
-                    como te conoci tobikiss
+                    como nos conocimos jj
                 </button>
             </div>
         </section>
 
         <!-- El Destino Actúa -->
         <section id="destino" class="section">
-            <div class="content-card">
+            <div class="content-card animate-in">
                 <div class="header-seccion">
                     <div class="numero-seccion">1</div>
                     <h2>Cuando el destino se metió</h2>
@@ -311,7 +347,7 @@
                         <div class="marco-foto">
                             <img src="https://i.ibb.co/3YM1K323/IMG-1695.jpg" alt="Nuestra primera conversación" class="img-captura">
                         </div>
-                        <p class="pie-foto">Y así arrancó todo...</p>
+                        <p class="pie-foto">Y así arrancó todo </p>
                     </div>
                     
                     <div class="burbuja burbuja-izq">
@@ -333,10 +369,10 @@
 
         <!-- La Invitación -->
         <section id="invitacion" class="section">
-            <div class="content-card">
+            <div class="content-card animate-in">
                 <div class="header-seccion">
                     <div class="numero-seccion">2</div>
-                    <h2>La birra que cambió todo</h2>
+                    <h2>La birra que nos unio</h2>
                 </div>
                 
                 <div class="chat-container">
@@ -365,7 +401,7 @@
 
         <!-- El Encuentro -->
         <section id="encuentro" class="section">
-            <div class="content-card">
+            <div class="content-card animate-in">
                 <div class="header-seccion">
                     <div class="numero-seccion">3</div>
                     <h2>El encuentro</h2>
@@ -398,29 +434,30 @@
                 </div>
                 
                 <div class="historia-texto">
-                    <p>Y así fue... esa primera birra que se transformó en risas que no paraban,</p>
-                    <p>esa conexión al toque que se siente pocas veces,</p>
-                    <p>y ese beso que salió tan natural...</p>
+                    <p>Y así fue como esa primera birra se transformó en risas que no paraban,</p>
+                    <p>esa conexión al toque que tuvimos, se siente muy pocas veces</p>
+                    <p>y ese beso que salió tan natural</p>
                 </div>
                 
                 <button class="btn-siguiente" onclick="cambiarSeccion('tios')">
-                    Y siguió...
+                    Y siguió por que un dia no alcanzo 
                 </button>
             </div>
         </section>
 
         <!-- Casa de los Tíos -->
         <section id="tios" class="section">
-            <div class="content-card">
+            <div class="content-card animate-in">
                 <div class="header-seccion">
                     <div class="numero-seccion">4</div>
-                    <h2>La noche en lo de tus tíos</h2>
+                    <h2>juntada epica</h2>
                 </div>
                 
                 <div class="historia-texto">
-                    <p>"Te invito a casa de mis tíos..."</p>
-                    <p>Y ahí caímos, cocinaste cosas ricas,</p>
-                    <p>tus tíos que me recibieron con la mejor,</p>
+                    <p>"veni a la casa de mis tios"</p>
+                    <p>y bueno fui,en el medio me pasaron muchas cosas (como perder el bondi)</p>
+                    <p>pero fui igual, y no me arrepiento, por que cocinaste cosas muy ricas.</p>
+                    <p>tus tíos que me recibieron con la mejor,gracias a vos los conoci a ellos</p>
                     <p>esa onda que se sintió desde el primer momento,</p>
                     <p>y la re certeza de que esto era diferente.</p>
                 </div>
@@ -433,13 +470,13 @@
 
         <!-- Mensaje Final -->
         <section id="mensaje" class="section">
-            <div class="content-card mensaje-final">
+            <div class="content-card mensaje-final animate-in">
                 <div class="header-seccion">
                     <h2>Para vos</h2>
                 </div>
                 
                 <div class="carta">
-                    <p>bueno tobi,</p>
+                    <p>Bueno Tobi,</p>
                     <p>Aunque ahora la distancia nos separe por un tiempo,</p>
                     <p>estos días con vos fueron muy hermosos.</p>
                     <p>Desde esa primera birra hasta las risas con tus tíos,</p>
@@ -455,8 +492,6 @@
     <script>
         // Función para cambiar entre secciones
         function cambiarSeccion(seccionId) {
-            console.log('Cambiando a sección:', seccionId);
-            
             // Ocultar todas las secciones
             const secciones = document.querySelectorAll('.section');
             secciones.forEach(seccion => {
@@ -467,56 +502,45 @@
             const seccionDestino = document.getElementById(seccionId);
             if (seccionDestino) {
                 seccionDestino.classList.add('active');
-                console.log('Sección cambiada exitosamente');
-            } else {
-                console.error('No se encontró la sección:', seccionId);
+                
+                // Aplicar animación a los elementos de la nueva sección
+                setTimeout(() => {
+                    const elementos = seccionDestino.querySelectorAll('.animate-in');
+                    elementos.forEach(elemento => {
+                        elemento.style.animation = 'none';
+                        setTimeout(() => {
+                            elemento.style.animation = 'slideUp 0.6s ease-out';
+                        }, 10);
+                    });
+                }, 50);
             }
         }
 
-        // Contador de días
+        // Contador de días - 17 de noviembre
         function actualizarContador() {
-            const fechaConocimiento = new Date('2024-11-17'); // Cambia esta fecha si es necesario
+            const fechaConocimiento = new Date('2024-11-17');
             const hoy = new Date();
             const diferencia = hoy - fechaConocimiento;
             const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
             
             const contador = document.getElementById('contador');
             if (contador) {
-                contador.innerHTML = `Ya pasaron <strong>${dias} días</strong> desde que nos conocimos`;
-            }
-        }
-
-        // Efecto de escritura
-        function efectoEscritura() {
-            const texto = '"Todo arrancó cuando..."';
-            const elemento = document.querySelector('.subtitulo');
-            if (!elemento) return;
-            
-            let i = 0;
-            elemento.innerHTML = '';
-            
-            function escribir() {
-                if (i < texto.length) {
-                    elemento.innerHTML += texto.charAt(i);
-                    i++;
-                    setTimeout(escribir, 80);
+                if (dias === 1) {
+                    contador.innerHTML = `Hace <strong>${dias} día</strong> que nos conocimos`;
+                } else {
+                    contador.innerHTML = `Hace <strong>${dias} días</strong> que nos conocimos`;
                 }
             }
-            escribir();
         }
 
         // Inicializar cuando cargue la página
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Página cargada correctamente');
             actualizarContador();
-            efectoEscritura();
             
-            // Verificar que todas las secciones existen
-            const seccionesIds = ['portada', 'destino', 'invitacion', 'encuentro', 'tios', 'mensaje'];
-            seccionesIds.forEach(id => {
-                if (!document.getElementById(id)) {
-                    console.error('Falta la sección:', id);
-                }
+            // Aplicar animación inicial a la portada
+            const elementosPortada = document.querySelectorAll('.portada-content > *');
+            elementosPortada.forEach((elemento, index) => {
+                elemento.style.animation = `slideUp 0.6s ease-out ${index * 0.2}s both`;
             });
         });
     </script>
